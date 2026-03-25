@@ -12,6 +12,18 @@ I help small teams catch real bugs by setting up fast and reliable Playwright te
 - Clear bug reports with screenshots
 - Simple setup instructions
 
+## Custom Solutions
+
+Need more advanced test coverage?
+
+I can extend the automation to cover:
+- End-to-end user flows
+- Edge cases
+- API testing
+- Ongoing test maintenance
+
+Custom packages available based on your needs.
+
 ## How to run
 
 1. Install dependencies:
