@@ -2,6 +2,8 @@
 
 I help small teams catch real bugs by setting up fast and reliable Playwright tests for their core user flows.
 
+All tests are designed to catch real user-facing issues early.
+
 ## What I can automate:
 - Login flows
 - Form submissions
@@ -38,5 +40,13 @@ This demo includes:
 - Login test
 - Basic user flow test
 - Add to cart flow
+
+## Try a Free Sample
+
+I can create a small sample test for one of your user flows before any commitment.
+
+This helps you see the value upfront.
+
+Feel free to reach out.
 
 All tests are designed to catch real user-facing issues early.
