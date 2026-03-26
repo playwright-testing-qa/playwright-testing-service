@@ -31,3 +31,12 @@ Custom packages available based on your needs.
 
 2. Run tests:
    npx playwright test
+
+## Sample Test Coverage
+
+This demo includes:
+- Login test
+- Basic user flow test
+- Add to cart flow
+
+All tests are designed to catch real user-facing issues early.
