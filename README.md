@@ -1,4 +1,4 @@
-# Playwright Automation Setup
+# Playwright Automation for Bug Detection
 
 I help small teams catch real bugs by setting up fast and reliable Playwright tests for their core user flows.
 
