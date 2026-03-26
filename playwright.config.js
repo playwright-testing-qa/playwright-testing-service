@@ -5,11 +5,11 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30000,
   use: {
-  headless: false,
-  launchOptions: {
-    slowMo: 1000
+    headless: false,
+    launchOptions: {
+      slowMo: 1000
+    },
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure'
   },
-  screenshot: 'only-on-failure',
-  video: 'retain-on-failure'
-},
 });
