@@ -40,6 +40,7 @@ This demo includes:
 - Login test
 - Basic user flow test
 - Add to cart flow
+- Full end-to-end user flow test
 
 ## Try a Free Sample
 
