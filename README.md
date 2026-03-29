@@ -38,6 +38,7 @@ Custom packages available based on your needs.
 
 This demo includes:
 - Login test
+- Invalid login (error handling test)
 - Basic user flow test
 - Add to cart flow
 - Full end-to-end user flow test
