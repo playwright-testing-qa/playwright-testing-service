@@ -43,6 +43,13 @@ This demo includes:
 - Add to cart flow
 - Full end-to-end user flow test
 
+## Continuous Integration
+
+All tests run automatically on every code change using GitHub Actions.
+
+This ensures that critical user flows are always verified and bugs are caught early before reaching production.
+![Playwright Tests](https://github.com/playwright-testing-qa/playwright-testing-service/actions/workflows/playwright.yml/badge.svg)
+
 ## Try a Free Sample
 
 I can create a small sample test for one of your user flows before any commitment.
