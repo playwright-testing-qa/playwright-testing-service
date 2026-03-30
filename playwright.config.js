@@ -5,9 +5,9 @@ module.exports = defineConfig({
   timeout: 30000,
   retries: 1,
   use: {
-    headless: false,
+    headless: process.env.CI ? true : false,
     launchOptions: {
-      slowMo: 1000
+      slowMo: process.env.CI ? 0 : 1000
     },
     screenshot: 'only-on-failure',
     video: 'retain-on-failure'
