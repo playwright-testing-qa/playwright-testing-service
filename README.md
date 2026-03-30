@@ -1,5 +1,7 @@
 # Playwright Automation for Bug Detection
 
+![Playwright Tests](https://github.com/playwright-testing-qa/playwright-testing-service/actions/workflows/playwright.yml/badge.svg)
+
 I help small teams catch real bugs by setting up fast and reliable Playwright tests for their core user flows.
 
 All tests are designed to catch real user-facing issues early.
@@ -48,7 +50,6 @@ This demo includes:
 All tests run automatically on every code change using GitHub Actions.
 
 This ensures that critical user flows are always verified and bugs are caught early before reaching production.
-![Playwright Tests](https://github.com/playwright-testing-qa/playwright-testing-service/actions/workflows/playwright.yml/badge.svg)
 
 ## Try a Free Sample
 
