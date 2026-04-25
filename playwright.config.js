@@ -6,34 +6,43 @@ const isCI = !!process.env.CI;
 module.exports = defineConfig({
   testDir: './tests',
 
-  // Timeout: longer in CI for stability
+  // Timeout
   timeout: isCI ? 60000 : 30000,
 
-  // Retry only in CI
+  // Retries (only in CI)
   retries: isCI ? 1 : 0,
 
-  // Run tests sequentially (important for demo + stability)
+  // Run tests one by one (stable + demo friendly)
   workers: 1,
 
   use: {
-    // Headless in CI, visible browser locally
-    headless: isCI,
+    // Headless in CI, visible locally
+    headless: isCI ? true : false,
 
-    // Fullscreen + slow motion (demo friendly)
+    // Browser launch settings
     launchOptions: {
-      slowMo: isCI ? 0 : 1500, // increase to 2000 if you want even slower
-      args: ['--start-maximized'], // open fullscreen
+      slowMo: isCI ? 0 : 7000, // slower = better demo
+      args: ['--start-maximized'],
     },
 
-    // Required for fullscreen to work properly
+    // Required for fullscreen
     viewport: null,
 
-    // Screenshots only on failure
+    contextOptions: {
+    viewport: null,
+},
+
+    // Better stability on slow sites
+    navigationTimeout: isCI ? 30000 : 20000,
+    actionTimeout: isCI ? 15000 : 10000,
+
+    // Screenshots
     screenshot: 'only-on-failure',
 
-    // Video:
-    // - CI: keep only failures
-    // - Local: record everything (great for demos)
+    // Video
     video: isCI ? 'retain-on-failure' : 'on',
+
+    // Trace (VERY IMPORTANT for debugging)
+    trace: 'on-first-retry',
   },
 });
