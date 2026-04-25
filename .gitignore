@@ -3,3 +3,4 @@ playwright-report/
 *.webm
 *.png
 node_modules/
+Web/
