@@ -43,20 +43,30 @@ test('Dogus form test (stable demo)', async ({ page }) => {
 
   // Submit
   await page.waitForTimeout(3000);
-  await page.click('button[type="submit"]');
+  await Promise.all([
+  page.waitForLoadState('networkidle').catch(() => {}),
+  page.click('button[type="submit"]')
+]);
 
-  // 🚨 CRITICAL: navigation ile yarışma
-  await page.waitForTimeout(8000);
+// Wait for either navigation OR network settle
+await Promise.race([
+  page.waitForNavigation({ waitUntil: 'load', timeout: 10000 }).catch(() => {}),
+  page.waitForTimeout(7000)
+]);
 
-  // URL check (SAFE)
-  const currentURL = page.url();
-  console.log('📍 Current URL:', currentURL);
+// Check server error (safe)
+const errorLocator = page.locator('text=Server Error, text=Error, text=Something went wrong');
 
-  // Screenshot ALWAYS (no condition)
-  console.log('📸 Screenshot captured');
-  await page.screenshot({
-    path: `result-${Date.now()}.png`,
-    fullPage: true
-  });
+if (await errorLocator.isVisible().catch(() => false)) {
+  await page.screenshot({ path: 'server-error.png', fullPage: true });
+  throw new Error('❌ Server Error detected after form submission');
+}
 
+// Always screenshot (for demo / proof)
+await page.screenshot({
+  path: `result-${Date.now()}.png`,
+  fullPage: true
 });
+
+// Log URL
+console.log('📍 Current URL:', page.url());
